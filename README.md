@@ -1,5 +1,4 @@
-# Code Obfuscator
-code obfuscation via control flow flattening
+# Code Obfuscation via Control Flow Flattening
 
 sample input:
 ```c
