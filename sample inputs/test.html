@@ -1,0 +1,84 @@
+<pre> <div style="padding: 10px; float:left;"><h1> input </h1>
+int main() {
+   int i;
+   int j;
+   for(i = 0; (i < 10); (i++)) {
+      for(j = 0; (j < 10); (j++)) {
+         if((i * (j % 3))) {
+            printf(" ");
+         } else {
+            printf("#");
+         }
+      }
+      printf("\n");
+   }
+}
+
+</div><div style="border-left: thick double #141f1f; padding: 10px; float:left;"><h1> control flow obfuscated </h1>
+int main() {
+   int i;
+   int j;
+   int __st__ = 1;
+   while(__st__) {
+      if((__st__ == 1)) {
+         i = 0;
+         __st__ = 2;
+         continue;
+      }
+      if((__st__ == 2)) {
+         if((i < 10)) {
+            __st__ = 3;
+            continue;
+         }
+         __st__ = 0;
+         continue;
+      }
+      if((__st__ == 3)) {
+         j = 0;
+         __st__ = 4;
+         continue;
+      }
+      if((__st__ == 4)) {
+         if((j < 10)) {
+            __st__ = 6;
+            continue;
+         }
+         __st__ = 5;
+         continue;
+      }
+      if((__st__ == 5)) {
+         printf("\n");
+         (i++);
+         __st__ = 2;
+         continue;
+      }
+      if((__st__ == 6)) {
+         if((i * (j % 3))) {
+            __st__ = 8;
+            continue;
+         } else {
+            __st__ = 9;
+            continue;
+         }
+         __st__ = 7;
+         continue;
+      }
+      if((__st__ == 7)) {
+         (j++);
+         __st__ = 4;
+         continue;
+      }
+      if((__st__ == 8)) {
+         printf(" ");
+         __st__ = 7;
+         continue;
+      }
+      if((__st__ == 9)) {
+         printf("#");
+         __st__ = 7;
+         continue;
+      }
+   }
+}
+
+</div> </pre>

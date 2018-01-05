@@ -1,0 +1,172 @@
+<pre> <div style="padding: 10px; float:left;"><h1> input </h1>
+int main() {
+   int array[500];
+   int n;
+   int c;
+   int d;
+   int position;
+   int swap;
+   printf("Enter number of elements\n");
+   scanf("%d", (&n));
+   printf("Enter %d integers\n", n);
+   for(c = 0; (c < n); (c++)) {
+      scanf("%d", (&array[c]));
+   }
+   for(c = 0; (c < (n - 1)); (c++)) {
+      position = c;
+      for(d = (c + 1); (d < n); (d++)) {
+         if((array[position] > array[d])) {
+            position = d;
+         }
+      }
+      if((position != c)) {
+         swap = array[c];
+         array[c] = array[position];
+         array[position] = swap;
+      }
+   }
+   printf("Sorted list in ascending order:\n");
+   for(c = 0; (c < n); (c++)) {
+      printf("%d\n", array[c]);
+   }
+   return 0;
+}
+
+</div><div style="border-left: thick double #141f1f; padding: 10px; float:left;"><h1> control flow obfuscated </h1>
+int main() {
+   int array[500];
+   int n;
+   int c;
+   int d;
+   int position;
+   int swap;
+   int __st__ = 1;
+   while(__st__) {
+      if((__st__ == 1)) {
+         printf("Enter number of elements\n");
+         scanf("%d", (&n));
+         printf("Enter %d integers\n", n);
+         __st__ = 2;
+         continue;
+      }
+      if((__st__ == 2)) {
+         c = 0;
+         __st__ = 3;
+         continue;
+      }
+      if((__st__ == 3)) {
+         if((c < n)) {
+            __st__ = 5;
+            continue;
+         }
+         __st__ = 4;
+         continue;
+      }
+      if((__st__ == 4)) {
+         c = 0;
+         __st__ = 6;
+         continue;
+      }
+      if((__st__ == 5)) {
+         scanf("%d", (&array[c]));
+         (c++);
+         __st__ = 3;
+         continue;
+      }
+      if((__st__ == 6)) {
+         if((c < (n - 1))) {
+            __st__ = 8;
+            continue;
+         }
+         __st__ = 7;
+         continue;
+      }
+      if((__st__ == 7)) {
+         printf("Sorted list in ascending order:\n");
+         __st__ = 9;
+         continue;
+      }
+      if((__st__ == 8)) {
+         position = c;
+         __st__ = 10;
+         continue;
+      }
+      if((__st__ == 9)) {
+         c = 0;
+         __st__ = 11;
+         continue;
+      }
+      if((__st__ == 10)) {
+         d = (c + 1);
+         __st__ = 12;
+         continue;
+      }
+      if((__st__ == 11)) {
+         if((c < n)) {
+            __st__ = 14;
+            continue;
+         }
+         __st__ = 13;
+         continue;
+      }
+      if((__st__ == 12)) {
+         if((d < n)) {
+            __st__ = 16;
+            continue;
+         }
+         __st__ = 15;
+         continue;
+      }
+      if((__st__ == 13)) {
+         return 0;
+         __st__ = 0;
+         continue;
+      }
+      if((__st__ == 14)) {
+         printf("%d\n", array[c]);
+         (c++);
+         __st__ = 11;
+         continue;
+      }
+      if((__st__ == 15)) {
+         if((position != c)) {
+            __st__ = 18;
+            continue;
+         }
+         __st__ = 17;
+         continue;
+      }
+      if((__st__ == 16)) {
+         if((array[position] > array[d])) {
+            __st__ = 20;
+            continue;
+         }
+         __st__ = 19;
+         continue;
+      }
+      if((__st__ == 17)) {
+         (c++);
+         __st__ = 6;
+         continue;
+      }
+      if((__st__ == 18)) {
+         swap = array[c];
+         array[c] = array[position];
+         array[position] = swap;
+         __st__ = 17;
+         continue;
+      }
+      if((__st__ == 19)) {
+         (d++);
+         __st__ = 12;
+         continue;
+      }
+      if((__st__ == 20)) {
+         position = d;
+         __st__ = 19;
+         continue;
+      }
+   }
+}
+
+</div> </pre>
